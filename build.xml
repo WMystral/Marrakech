@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Marrakech" default="compile" basedir="./app/">
+	<property name="src.dir" value="./src"/>
+
+	<target name="compile">
+		<javac srcdir="${src.dir}" includeantruntime="last"/>	
+	</target>
+
+	<target name="run" depends="compile">
+		<java classpath="${src.dir}" classname="Main" fork="true"/>
+	</target>
+
+	<target name="clean">
+		<delete>
+  			<fileset dir="." includes="**/*.class"/>
+		</delete>
+	</target>
+</project>
